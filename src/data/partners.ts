@@ -3,6 +3,7 @@ export interface Partner {
   name: string;
   category: "Technology" | "Consulting" | "Enterprise" | "Design & Engineering";
   tagline?: string;
+  logo?: string;
 }
 
 export const industryPartners: Partner[] = [

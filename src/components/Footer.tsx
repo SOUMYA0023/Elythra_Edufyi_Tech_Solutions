@@ -26,6 +26,7 @@ const footerSections = [
     title: "Legal & Policies",
     links: [
       { label: "Terms & Conditions", href: "/terms" },
+      { label: "Privacy Policy", href: "/privacy" },
       { label: "Cookie Policy", href: "/cookies" },
     ],
   },
@@ -163,7 +164,7 @@ export default function Footer() {
           ))}
         </div>
 
-        {/* Direct Contact Summary */}
+        {/* Direct Contact Summary & Working Hours */}
         <div className="border-t border-white/10 pt-6 pb-6 flex flex-wrap gap-x-8 gap-y-3 text-xs text-text-inverse/60 font-medium">
           <div className="flex items-center gap-2">
             <span className="text-brand-bright font-bold">Email:</span>
@@ -189,9 +190,13 @@ export default function Footer() {
             © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
           </p>
 
-          <div className="flex items-center gap-5 text-xs text-text-inverse/50">
+          <div className="flex items-center gap-4 text-xs text-text-inverse/50">
             <Link href="/terms" className="hover:text-white transition-colors">
               Terms & Conditions
+            </Link>
+            <span>•</span>
+            <Link href="/privacy" className="hover:text-white transition-colors">
+              Privacy Policy
             </Link>
             <span>•</span>
             <Link href="/cookies" className="hover:text-white transition-colors">

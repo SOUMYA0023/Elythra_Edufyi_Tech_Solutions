@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { industryPartners } from "@/data/partners";
 
 export default function PartnerMarquee() {
@@ -33,9 +34,21 @@ export default function PartnerMarquee() {
               key={`${partner.id}-${index}`}
               className="flex items-center gap-3 px-5 py-3.5 rounded-xl bg-white border border-border-light shadow-sm hover:border-brand-core/30 hover:shadow-md transition-all duration-300 min-w-[180px]"
             >
-              <div className="w-9 h-9 rounded-lg bg-brand-sky flex items-center justify-center font-heading text-sm font-bold text-brand-deep flex-shrink-0">
-                {partner.name.substring(0, 2).toUpperCase()}
-              </div>
+              {partner.logo ? (
+                <div className="w-9 h-9 relative flex items-center justify-center flex-shrink-0 overflow-hidden rounded-lg">
+                  <Image
+                    src={partner.logo}
+                    alt={`${partner.name} logo`}
+                    width={36}
+                    height={36}
+                    className="object-contain"
+                  />
+                </div>
+              ) : (
+                <div className="w-9 h-9 rounded-lg bg-brand-sky flex items-center justify-center font-heading text-sm font-bold text-brand-deep flex-shrink-0">
+                  {partner.name.substring(0, 2).toUpperCase()}
+                </div>
+              )}
               <div className="text-left">
                 <span className="font-heading text-sm font-bold text-text-primary block leading-tight">
                   {partner.name}

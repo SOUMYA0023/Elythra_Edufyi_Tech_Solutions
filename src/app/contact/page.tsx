@@ -11,7 +11,6 @@ export default function ContactPage() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    // Simulate client-side validation & submission
     setTimeout(() => {
       setLoading(false);
       setSubmitted(true);
@@ -31,14 +30,14 @@ export default function ContactPage() {
               We&apos;re Here to Help You Build Your Career
             </h1>
             <p className="text-lg text-text-muted leading-relaxed">
-              Have questions about our course domains, internship tracks, or placement assistance? Send us a message or chat directly with our team.
+              Have questions about our course domains, internship tracks, or placement assistance? Send us a message or visit one of our official campus branches.
             </p>
           </div>
         </SectionReveal>
 
         {/* 2-Column Balanced Container */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start max-w-6xl mx-auto">
-          {/* Left Column: Contact Information & WhatsApp CTA */}
+          {/* Left Column: Contact Information, Working Hours & 3 Branch Addresses */}
           <div className="lg:col-span-5 space-y-6">
             {/* Direct Contact Card */}
             <SectionReveal>
@@ -93,8 +92,62 @@ export default function ContactPage() {
               </div>
             </SectionReveal>
 
+            {/* Official Branch Locations Card (Three Distinct Branches) */}
+            <SectionReveal delay={80}>
+              <div className="glass-card p-6 sm:p-8 space-y-5">
+                <h2 className="text-xl font-heading font-bold text-text-primary border-b border-border-light pb-4 flex items-center gap-2">
+                  <svg className="w-5 h-5 text-brand-core" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                  </svg>
+                  Our Campus Branches (3)
+                </h2>
+
+                <div className="space-y-4 divide-y divide-border-light/60">
+                  {/* Branch 1 */}
+                  <div className="pt-2 first:pt-0">
+                    <p className="text-xs font-bold font-heading uppercase tracking-wider text-brand-deep mb-1">
+                      BRANCH 1 — HSR Layout
+                    </p>
+                    <p className="text-xs text-text-primary leading-relaxed">
+                      Third Floor, Seven Hills,<br />
+                      #424, Tenth Cross Street,<br />
+                      27th Main Road, Sector 1, HSR Layout,<br />
+                      Bangalore, Karnataka 560102
+                    </p>
+                  </div>
+
+                  {/* Branch 2 */}
+                  <div className="pt-3">
+                    <p className="text-xs font-bold font-heading uppercase tracking-wider text-brand-deep mb-1">
+                      BRANCH 2 — HSR Layout
+                    </p>
+                    <p className="text-xs text-text-primary leading-relaxed">
+                      Fourth Floor,<br />
+                      Near Baskin Robbins,<br />
+                      Tenth Cross Street, 27th Main Road, Sector 1, HSR Layout,<br />
+                      Bangalore, Karnataka 560102
+                    </p>
+                  </div>
+
+                  {/* Branch 3 */}
+                  <div className="pt-3">
+                    <p className="text-xs font-bold font-heading uppercase tracking-wider text-brand-deep mb-1">
+                      BRANCH 3 — Ernakulam
+                    </p>
+                    <p className="text-xs text-text-primary leading-relaxed">
+                      Liju Mahal,<br />
+                      ARA 10, Building No. 41/2053 A, First Floor,<br />
+                      Village Office Road, Ernakulam,<br />
+                      Kerala 682028
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </SectionReveal>
+
             {/* Direct WhatsApp Callout Card */}
-            <SectionReveal delay={100}>
+            <SectionReveal delay={120}>
               <div className="p-6 rounded-2xl bg-gradient-to-br from-emerald-600 to-teal-700 text-white shadow-xl space-y-4">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
